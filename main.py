@@ -1,3 +1,5 @@
+
+    
 import os
 from flask import Flask
 import telebot
@@ -10,10 +12,10 @@ app = Flask(__name__)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=1)
-    btn1 = types.KeyboardButton('Aviochiptalar qidirish')
-    btn2 = types.KeyboardButton('Visa murojaat')
-    btn3 = types.KeyboardButton('Mehmonxona band qilish')
+    markup = types.InlineKeyboardMarkup(row_width=1)
+    btn1 = types.InlineKeyboardButton(text='Aviochiptalar qidirish', url='https://aviasales.tpx.nl/n0tM4FWQ')
+    btn2 = types.InlineKeyboardButton(text='Visa murojaat', url='https://www.trip.com/t/XbJQIYLn5X2')
+    btn3 = types.InlineKeyboardButton(text='Mehmonxona band qilish', url='https://www.trip.com/t/XbJQIYLn5X2')
     markup.add(btn1, btn2, btn3)
     bot.send_message(message.chat.id, "Salom! Kerakli bo'limni tanlang:", reply_markup=markup)
 
