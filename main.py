@@ -1,17 +1,3 @@
-import telebot
-bot=telebot.TeleBot('9238718427:AAF5QYEEofsLyzrP0dR191X6LAD9wcM4KHI')
-import os
-from flask import Flask
-
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "Bot is running"
-
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port)
 import os
 from flask import Flask
 import telebot
@@ -38,4 +24,5 @@ def home():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-
+    bot.infinity_polling()
+    
